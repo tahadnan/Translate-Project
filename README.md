@@ -13,3 +13,7 @@ pip install -r requirements.txt
 ```bash
 python src/main.py <input_file> <target_language>
 ```
+
+## To-Do
+Implement argparse instead of argv
+Make the project more flexibal 
