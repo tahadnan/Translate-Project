@@ -1,6 +1,6 @@
 # Translate-project
 A file translator project developed as part of the ZTM Python course.
-## DEMO
+## <p align="center"> DEMO </p>
 https://github.com/user-attachments/assets/5ffcd1a3-b535-4d9f-84fa-44d11f2dc458
 ## Installation
 
