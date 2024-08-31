@@ -1,4 +1,4 @@
-# Fexercise
+# Translate-project
 
 A file translator project developed as part of the ZTM Python course.
 
