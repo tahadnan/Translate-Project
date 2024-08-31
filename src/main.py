@@ -1,30 +1,33 @@
 #Exercise: Translator
 from translate import Translator
-from sys import argv
 import time
 from resources import *
 import os
-src = argv[1]
-lang = argv[2].lower()
+import argparse
 
+parser = argparse.ArgumentParser(description="This is a basic Python program that helps its users in translating files from a language to another.")
+parser.add_argument('file',help="Get the file that the user wants to translate.")
+parser.add_argument('target_language',help='Specify the wanted language to translate to.')
+
+args = parser.parse_args()
 try:
-    if len(lang) != 2 or lang not in supported_langs:
+    if len(args.target_language) != 2 or args.target_language.lower() not in supported_langs:
         print("Invalid option")
         exit()
     else:
-       with open(src,'r') as text:
+       with open(args.file,'r') as text:
         lines = (line.rstrip() for line in text)
 
         # Extract the file name and extension
-        base_name, ext = os.path.splitext(src)
-        output_file = f"{base_name}_to_{lang}{ext}"
+        base_name, ext = os.path.splitext(args.file)
+        output_file = f"{base_name}_to_{args.target_language}{ext}"
 
-        with open(output_file,'a') as ttext:
-            translang = Translator(to_lang=lang)
-            ttext.write(f"\nTranslated text to {supported_langs_dict[lang]}:\n\n")
+        with open(output_file,'a') as translated_text:
+            translang = Translator(to_lang=args.target_language)
+            translated_text.write(f"Translated text to {supported_langs_dict[args.target_language.lower()]}:\n\n")
             t1 = time.perf_counter()
             for line in lines:
-                ttext.write(f"{translang.translate(line)}\n")
+                translated_text.write(f"{translang.translate(line)}\n")
             t2 = time.perf_counter()
 
         print(f"Done within {t2-t1:.4f}s")
