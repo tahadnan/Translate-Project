@@ -17,5 +17,4 @@ python src/main.py <input_file> <target_language>
 The same goes for Windows or MacOS.
 
 ## To-Do
-Implement argparse instead of argv \
 Make the project more flexible. 
