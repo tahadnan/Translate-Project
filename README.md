@@ -1,7 +1,7 @@
 # Translate-project
 A file translator project developed as part of the ZTM Python course.
 ## DEMO
-https://github.com/user-attachments/assets/3f983218-8e7b-4799-90bb-5aacfb7fc671
+https://github.com/user-attachments/assets/5ffcd1a3-b535-4d9f-84fa-44d11f2dc458
 ## Installation
 
 ```bash
