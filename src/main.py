@@ -12,13 +12,8 @@ try:
         print("Invalid option")
         exit()
     else:
-        def read_lines(src):
-            with open(src,'r') as text:
-                # print(content := text.read(), type(content), len(content))
-                # lines = [line.rstrip() for line in text]
-                for line in text:
-                    yield line.rstrip()
-
+       with open(src,'r') as text:
+        lines = (line.rstrip() for line in text)
 
         # Extract the file name and extension
         base_name, ext = os.path.splitext(src)
@@ -28,7 +23,7 @@ try:
             translang = Translator(to_lang=lang)
             ttext.write(f"\nTranslated text to {supported_langs_dict[lang]}:\n\n")
             t1 = time.perf_counter()
-            for line in read_lines(src):
+            for line in lines:
                 ttext.write(f"{translang.translate(line)}\n")
             t2 = time.perf_counter()
 
